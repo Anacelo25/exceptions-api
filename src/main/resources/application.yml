@@ -1,1 +1,8 @@
-spring.application.name=exceptions
+server:
+  port: 7001
+
+spring:
+  datasource:
+    username:
+    password:
+
