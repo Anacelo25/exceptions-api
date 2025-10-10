@@ -6,3 +6,12 @@ spring:
     username:
     password:
 
+  jpa:
+    hibernate:
+      ddl-auto: create
+    generated-ddl: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+        show-sql: true
+        format-sql: true
