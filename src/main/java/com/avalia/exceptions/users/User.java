@@ -1,12 +1,15 @@
 package com.avalia.exceptions.users;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import jakarta.validation.constraints.Pattern;
 
 @Entity
-@Table(name = "USERS")
+@Table(name = "USERS", uniqueConstraints =
+        {@UniqueConstraint(name = "UK_USERNAME", columnNames = "username"),
+        @UniqueConstraint(name = "UK_EMAIL", columnNames = "email")})
 public class User {
 
     @Id
@@ -18,4 +21,9 @@ public class User {
     @Column(name = "username", nullable = false, length = 100)
     @Pattern(regexp = "^[a-zA-Z0-9_]+$", message = "Nome can only contain letters, numbers, and underscores")
     private String nome;
+
+    @NotBlank(message = "email is required")
+    @Email(message = "Email should be valid")
+    @Column(name = "email", nullable = false, length = 100)
+    private String email;
 }
