@@ -26,4 +26,9 @@ public class User {
     @Email(message = "Email should be valid")
     @Column(name = "email", nullable = false, length = 100)
     private String email;
+
+    @NotBlank(message = "password is required")
+    @Size(min = 8, message = "password must be at least 8 characters long")
+    @Column(name = "password", nullable = false)
+    private String senha;
 }
