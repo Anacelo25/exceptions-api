@@ -31,4 +31,13 @@ public class User {
     @Size(min = 8, message = "password must be at least 8 characters long")
     @Column(name = "password", nullable = false)
     private String senha;
+
+    @Column(name = "first_name", length = 50)
+    private String primeiroNome;
+
+    @Column(name = "last_name", length = 50)
+    private String ultimoNome;
+
+    @Column(name = "active", nullable = false)
+    private boolean ativo = true;
 }
