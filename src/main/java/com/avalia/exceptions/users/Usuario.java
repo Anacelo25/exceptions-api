@@ -39,5 +39,8 @@ public class User {
     private String ultimoNome;
 
     @Column(name = "active", nullable = false)
-    private boolean ativo = true;
+    private Boolean ativo = true;
+
+    
+    private UserStatus status = UserStatus.ACTIVE;
 }
