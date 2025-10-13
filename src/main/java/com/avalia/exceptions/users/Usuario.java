@@ -10,7 +10,7 @@ import jakarta.validation.constraints.Pattern;
 @Table(name = "USERS", uniqueConstraints =
         {@UniqueConstraint(name = "UK_USERNAME", columnNames = "username"),
         @UniqueConstraint(name = "UK_EMAIL", columnNames = "email")})
-public class User {
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,6 +41,6 @@ public class User {
     @Column(name = "active", nullable = false)
     private Boolean ativo = true;
 
-    
-    private UserStatus status = UserStatus.ACTIVE;
+    @Column(name = "user_status")
+    private StatusUsuario status = StatusUsuario.ACTIVE;
 }
