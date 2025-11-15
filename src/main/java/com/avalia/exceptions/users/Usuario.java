@@ -41,6 +41,7 @@ public class Usuario {
     @Column(name = "active", nullable = false)
     private Boolean ativo = true;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "user_status")
     private StatusUsuario status = StatusUsuario.ACTIVE;
 }
