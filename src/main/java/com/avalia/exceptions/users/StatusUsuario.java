@@ -1,6 +1,6 @@
 package com.avalia.exceptions.users;
 
-public enum UserStatus {
+public enum StatusUsuario {
     ACTIVE,
     UNACTIVE,
     SUSPENDED,
