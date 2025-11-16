@@ -72,5 +72,6 @@ public class Usuario {
     @Column(name = "last_login_at")
     private LocalDateTime ultimoLogin;
 
+    @OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
     private List<Pedido> pedidos = new ArrayList<>();
 }
