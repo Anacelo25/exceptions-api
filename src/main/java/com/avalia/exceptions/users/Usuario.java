@@ -1,10 +1,17 @@
 package com.avalia.exceptions.users;
 
+import com.avalia.exceptions.pedidos.Pedido;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import jakarta.validation.constraints.Pattern;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "USERS", uniqueConstraints =
@@ -44,4 +51,26 @@ public class Usuario {
     @Enumerated(EnumType.STRING)
     @Column(name = "user_status")
     private StatusUsuario status = StatusUsuario.ACTIVE;
+
+    @Column(name = "role_id")
+    private Long permissaoUsuario;
+
+    @Column(name = "version")
+    private Long versao;
+
+    @Column(name = "create_at")
+    @CreationTimestamp
+    private LocalDateTime dataCriacao;
+
+    @Column(name = "updated_at")
+    @UpdateTimestamp
+    private LocalDateTime dataAtualizacao;
+
+    @Column(name = "deleted_at")
+    private LocalDateTime dataExclusao;
+
+    @Column(name = "last_login_at")
+    private LocalDateTime ultimoLogin;
+
+    private List<Pedido> pedidos = new ArrayList<>();
 }
