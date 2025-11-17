@@ -1,6 +1,7 @@
 package com.avalia.exceptions.endereco;
 
 
+import com.avalia.exceptions.users.Usuario;
 import jakarta.persistence.*;
 
 @Entity
@@ -25,4 +26,12 @@ public class Endereco {
 
     @Column(name = "country")
     private String pais;
+
+    @Column(name = "address_type")
+    @Enumerated(EnumType.STRING)
+    private AddressType tipoEndereco;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private Usuario usuario;
 }
