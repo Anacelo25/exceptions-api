@@ -1,5 +1,6 @@
 package com.avalia.exceptions.pedidos;
 
+import com.avalia.exceptions.users.Usuario;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -30,4 +31,8 @@ public class Pedido {
     @Column(name = "created_at")
     @CreationTimestamp
     private LocalDateTime dataCriacao;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private Usuario usuario;
 }

@@ -1,5 +1,6 @@
 package com.avalia.exceptions.users;
 
+import com.avalia.exceptions.endereco.Endereco;
 import com.avalia.exceptions.pedidos.Pedido;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -74,4 +75,7 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
     private List<Pedido> pedidos = new ArrayList<>();
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Endereco> enderecos = new ArrayList<>();
 }
