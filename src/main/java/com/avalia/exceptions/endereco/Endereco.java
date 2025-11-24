@@ -1,7 +1,7 @@
 package com.avalia.exceptions.endereco;
 
 
-import com.avalia.exceptions.users.Usuario;
+import com.avalia.exceptions.usuario.Usuario;
 import jakarta.persistence.*;
 
 @Entity

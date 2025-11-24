@@ -1,4 +1,4 @@
-package com.avalia.exceptions.users;
+package com.avalia.exceptions.usuario;
 
 import com.avalia.exceptions.endereco.Endereco;
 import com.avalia.exceptions.pedidos.Pedido;
@@ -74,7 +74,7 @@ public class Usuario {
     @Column(name = "last_login_at")
     private LocalDateTime ultimoLogin;
 
-    @OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<Pedido> pedidos = new ArrayList<>();
 
     @OneToMany(mappedBy = "usuario")

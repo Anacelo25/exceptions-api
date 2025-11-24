@@ -1,4 +1,4 @@
-package com.avalia.exceptions.users;
+package com.avalia.exceptions.usuario;
 
 public enum StatusUsuario {
     ACTIVE,

@@ -3,14 +3,18 @@ server:
 
 spring:
   datasource:
-    url:
-    username:
-    password:
+    url: jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.100.14)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=XEPDB1)))
+    username: SYSTENS
+    password: 12345
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
 
   jpa:
+    generate-ddl: true
     hibernate:
       ddl-auto: create
-    generated-ddl: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.OracleDialect

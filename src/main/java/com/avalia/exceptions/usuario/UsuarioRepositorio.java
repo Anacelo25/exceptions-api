@@ -1,4 +1,4 @@
-package com.avalia.exceptions.users;
+package com.avalia.exceptions.usuario;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
